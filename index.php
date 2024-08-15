@@ -10,7 +10,26 @@
 </head>
 
 <body>
-	<div id="header-container"></div>
+	<!--<div id="header-container"></div>-->
+    <header>
+        <nav>
+            <div class="logo"></div>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+				<li class="dropdown">
+					<a href="#projects">Projets</a>
+					<ul class="dropdown-menu">
+						<li><a href="#lol.html">League of legend project</a></li>
+						<li><a href="#project2">Projet 2</a></li>
+						<li><a href="#project3">Projet 3</a></li>
+					</ul>
+				</li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+	<?php include 'header.html'; ?>
     <main>
         <section id="hero">
             <div class="hero-content">
