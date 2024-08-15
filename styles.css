@@ -38,7 +38,7 @@ nav {
     text-align: center;
     padding: 50px 20px;
     background: url('background.jpg') no-repeat center center/cover;
-    color: #fff;
+    /*color: #fff;*/
 }
 
 .hero-content h1 {
@@ -96,5 +96,5 @@ footer {
     text-align: center;
     padding: 10px 0;
     background-color: #333;
-    color: #fff;
+    /*color: #fff;*/
 }
