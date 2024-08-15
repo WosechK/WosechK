@@ -33,50 +33,42 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>Bienvenue sur mon site personnel</h1>
-                <p>Je suis K, un développeur web passionné.</p>
-                <a href="#about" class="btn">En savoir plus</a>
+                <h1>Recherche de Summoner - League of Legends</h1>
             </div>
-        </section>
+			<div>
+				<input type="text" id="summonerName" placeholder="Entrez le nom du Summoner">
+				<button onclick="getSummonerData()">Rechercher</button>
+			</div>
+			<div id="result"></div>
 
-        <section id="about">
-            <h2>À propos de moi</h2>
-            <p>Je suis un développeur web spécialisé dans la création de sites modernes et performants. Avec une solide expérience dans diverses technologies, je crée des solutions qui répondent aux besoins de mes clients.</p>
-        </section>
-
-        <section id="projects">
-            <h2>Mes Projets</h2>
-            <div class="projects-container">
-                <article class="project-item">
-                    <h3>Projet 1</h3>
-                    <p>Description du projet 1.</p>
-                </article>
-                <article class="project-item">
-                    <h3>Projet 2</h3>
-                    <p>Description du projet 2.</p>
-                </article>
-                <article class="project-item">
-                    <h3>Projet 3</h3>
-                    <p>Description du projet 3.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Mes Compétences</h2>
-            <ul class="skills-list">
-                <li>HTML5 & CSS3</li>
-                <li>JavaScript (React, Vue)</li>
-                <li>Node.js & Express</li>
-                <li>Python & Flask</li>
-                <li>Responsive Design</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contactez-moi</h2>
-            <p>Vous souhaitez collaborer ou en savoir plus ? N'hésitez pas à me contacter !</p>
-            <a href="mailto:petermann.loic@gmail.com" class="btn">petermann.loic@gmail.com</a>
+			<script>
+				function getSummonerData() {
+					const summonerName = document.getElementById('summonerName').value;
+					
+					if (summonerName.trim() === "") {
+						alert("Veuillez entrer un nom de Summoner.");
+						return;
+					}
+					
+					// Appel à l'API backend pour récupérer les informations du Summoner
+					fetch(`get_summoner.php?summoner=${summonerName}`)
+						.then(response => response.json())
+						.then(data => {
+							if (data.error) {
+								document.getElementById('result').innerHTML = `<p style="color:red;">Erreur : ${data.error}</p>`;
+							} else {
+								document.getElementById('result').innerHTML = `
+									<p><strong>Nom :</strong> ${data.name}</p>
+									<p><strong>Niveau :</strong> ${data.summonerLevel}</p>
+								`;
+							}
+						})
+						.catch(error => {
+							console.error('Erreur lors de la récupération des données:', error);
+							document.getElementById('result').innerHTML = `<p style="color:red;">Une erreur est survenue lors de la récupération des données.</p>`;
+						});
+				}
+			</script>
         </section>
     </main>
 	<!--<div id="footer-container"></div>-->
