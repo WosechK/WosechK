@@ -7,28 +7,16 @@
     <meta name="description" content="Bienvenue sur mon site personnel. Découvrez mes projets, compétences, et contactez-moi pour des collaborations.">
     <title>Mon Site Personnel</title>
     <link rel="stylesheet" href="styles.css">
+	<script> 
+	$(function(){
+	  $("#header").load("header.html"); 
+	  $("#footer").load("footer.html"); 
+	});
+	</script> 	
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="logo"></div>
-            <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-				<li class="dropdown">
-					<a href="#projects">Projets</a>
-					<ul class="dropdown-menu">
-						<li><a href="#project1">Projet 1</a></li>
-						<li><a href="#project2">Projet 2</a></li>
-						<li><a href="#project3">Projet 3</a></li>
-					</ul>
-				</li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
+	<div id="header"></div>
     <main>
         <section id="hero">
             <div class="hero-content">
@@ -78,10 +66,7 @@
             <a href="mailto:petermann.loic@gmail.com" class="btn">petermann.loic@gmail.com</a>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 K. Tous droits réservés.</p>
-    </footer>
+	<div id="footer"></div>
 </body>
 
 </html>
