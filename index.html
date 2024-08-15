@@ -29,7 +29,6 @@
             </ul>
         </nav>
     </header>
-	<?php include 'header.html'; ?>
     <main>
         <section id="hero">
             <div class="hero-content">
@@ -79,24 +78,9 @@
             <a href="mailto:petermann.loic@gmail.com" class="btn">petermann.loic@gmail.com</a>
         </section>
     </main>
-	<div id="footer-container"></div>
-	
-	<script>
-		// Chargement du header via AJAX
-		fetch('header.html')
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById('header-container').innerHTML = data;
-			});
-		// Chargement du footer via AJAX
-		fetch('footer.html')
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById('footer-container').innerHTML = data;
-			});
-	</script>	
-	
-	
+	<!--<div id="footer-container"></div>-->
+	<footer>
+		<p>&copy; 2024 K. Tous droits réservés.</p>
+    </footer>
 </body>
-
 </html>
