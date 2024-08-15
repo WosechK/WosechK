@@ -30,6 +30,7 @@ nav {
     padding: 0;
 }
 
+
 .nav-links li {
     position: relative;
 }
@@ -75,6 +76,13 @@ nav {
     text-align: center;
     padding: 50px 20px;
     background: url('background.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+.logo {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('logo.jpg') no-repeat center center/cover;
     color: #fff;
 }
 
